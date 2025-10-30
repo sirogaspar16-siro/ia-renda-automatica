@@ -1,0 +1,35 @@
+# deploy-completo.ps1
+
+# Muda para o diretório do script (pasta do projeto)
+Set-Location -Path $PSScriptRoot
+
+Write-Host "==============================="
+Write-Host "🚀 Iniciando deploy IA Renda Automática"
+Write-Host "==============================="
+
+# Verifica se o Git está instalado
+if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
+    Write-Host "⚠️  O Git não está instalado."
+    Write-Host "Baixe em https://git-scm.com/download/win"
+    Pause
+    exit
+} else {
+    Write-Host "✅ Git detectado! Continuando..."
+}
+
+# Adiciona todas as mudanças
+git add .
+
+# Cria commit com data e hora
+$datetime = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
+git commit -m "Atualização automática - $datetime"
+
+# Envia para o repositório remoto
+git push -u origin main
+
+Write-Host
+Write-Host "==============================="
+Write-Host "✅ Deploy completo enviado com sucesso!"
+Write-Host "🌍 Aguarde alguns segundos e confira na Vercel."
+Write-Host "==============================="
+Pause
