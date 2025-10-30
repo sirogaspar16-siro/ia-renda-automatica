@@ -1,4 +1,4 @@
-# IA Renda Automática
+﻿# IA Renda Automática
 
 Projeto React + Vite + Tailwind CSS
 
@@ -19,6 +19,7 @@ npm run preview
 ```
 
 ## Estrutura principal
+
 - `src/App.jsx`: componente principal
 - `src/index.jsx`: entrada do React
 - `index.html`: HTML raiz
@@ -29,16 +30,16 @@ npm run preview
 
 O projeto gera automaticamente `dist/sitemap.xml` depois de `npm run build`.
 
-- Defina as rotas no arquivo `routes.json` na raiz do projeto (array de strings). Exemplo:
+Defina as rotas no arquivo `routes.json` na raiz do projeto (array de strings). Exemplo:
 
 ```json
 [
-	"/",
-	"/comprar"
+  "/",
+  "/comprar"
 ]
 ```
 
-- Para gerar URLs corretas no sitemap, defina a variável de ambiente `SITE_URL` antes do build:
+Para gerar URLs corretas no sitemap, defina a variável de ambiente `SITE_URL` antes do build:
 
 No cmd.exe:
 ```cmd
@@ -50,11 +51,9 @@ No PowerShell:
 $env:SITE_URL='https://meusite.com'; npm run build
 ```
 
-
 ## Deploy
 
 Netlify
-
 
 ### Deploy via GitHub Actions (Netlify)
 
@@ -68,12 +67,8 @@ Antes de usar o workflow, configure estes segredos no repositório (Settings →
 
 Depois de adicionar os segredos, qualquer push na branch `main` disparará o workflow e fará o deploy automático.
 
-- Na Vercel escolha o projeto e configure o comando de build `npm run build` e o diretório de saída `dist`.
-
-Observações
-- `robots.txt` foi adicionado. Se quiser gerar `sitemap.xml`, posso criar um script simples para gerar a partir das rotas.
-
-
 ## Observações
+
+- `robots.txt` foi adicionado.
 - Edite o número do WhatsApp em `App.jsx` se necessário.
 - O projeto já está pronto para deploy estático (Netlify, Vercel, etc).
